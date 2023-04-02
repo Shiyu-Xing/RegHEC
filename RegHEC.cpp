@@ -498,6 +498,7 @@ int main() {
 	rs.filter(*PTRcloud9sub);
 
 
+
 	//Read robot poses. If eye-to-hand scenario then take the inverse
 	fstream in;
 	in.open(path + "/RobotPoses.dat", ios::in);//打开一个file
