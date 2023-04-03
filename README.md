@@ -9,7 +9,7 @@ RegHEC is a registration-based hand-eye calibration technique using multi-view p
 The cores of RegHEC are 2 novel algorithms. First, Bayesian Optimization based initial alignment(BO-IA) models the registration problem as a Gaussian Process over hand-eye relation and covariance function is modified (given in `ExpSE3.cpp`) to be compatible with distance metric in 3-D motion space SE(3). It gives the coarse point clouds registration then hand over the the proper initial guess of hand-eye relation to an ICP variant with Anderson Accleration(AA-ICPv) for later fine registration and accurate calibration. 
 
 <p align="center">
-<img src="docs/setup.png" alt="alt text" width=68% height=68%>
+<img src="docs/setup.png" alt="alt text" width=56% height=56%>
 </p>
 
 <!--First, point clouds initial alignment and rough hand-eye relation are obtained via Bayesian Optimization,
@@ -53,14 +53,14 @@ The current version is rather static, some simple modifications are needed to te
 ## Output
 Calibrated hand-eye relation and multi-view point clouds registration.
 <p align="center">
-<img src="docs/FineReg.png" alt="alt text" width=68% height=68%>
+<img src="docs/FineReg.png" alt="alt text" width=56% height=56%>
 </p>
 <p align="center">
 Registration of 9 David point clouds and calibration results given by RegHEC(eye in hand)
 </p>
 
 <p align="center">
-<img src="docs/Eye2HandFineReg.png" alt="alt text" width=68% height=68%>
+<img src="docs/Eye2HandFineReg.png" alt="alt text" width=56% height=56%>
 </p>
 <p align="center">
 Registration of 9 Gripper point clouds and calibration results given by RegHEC(eye to hand)
