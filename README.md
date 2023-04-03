@@ -20,17 +20,19 @@ As a general solution, RegHEC is applicable for most 3-D vision guided task in b
 
 For more information, please refer to our paper.
 
-##Building##
+## Building
 I work under Windows operation system with VS2019. This repository is a C++ solution developed with the following versions of external libraries:
 
-**Limbo 2.1** Limbo is an open source C++ library for Bayesian optimizaiton. The code is currently mostly developed for GNU/Linux, thus we modified the system call in the sys.hpp to make it compatible with Windows. Both limbo 2.1 with modified system call and precompiled NLopt 2.5.0 with MSVC 2019 are given above for convenience.
+**Limbo 2.1**    
+[Limbo](https://github.com/resibots/limbo) is an open source C++ library for Bayesian optimizaiton, which relies on NLOpt for maximization of acquisition function. Both limbo 2.1 and precompiled NLopt 2.5.0 with MSVC 2019 are given above for convenience. Please note that, limbo is currently mostly developed for GNU/Linux, thus we modified the system call in the sys.hpp(in RegHEC/limbo-release-2.1/src/limbo/tools) to make it compatible with Windows. 
   
-**Sophus 1.0.0** Sophus is a c++ implementation of Lie groups commonly used for 2d and 3d geometric problems (i.e. for Computer Vision or Robotics applications) for convenience. 
+**Sophus 1.0.0**   
+[Sophus](https://github.com/strasdat/Sophus) is a c++ implementation of Lie groups commonly used for 2d and 3d geometric problems (i.e. for Computer Vision or Robotics applications). Sophus 1.0.0 is given above for convenience. 
 
-**PCL 1.11.1** We suggest to install [PCL-1.11.1-AllInOne-msvc2019-win64.exe](https://github.com/PointCloudLibrary/pcl/releases/tag/pcl-1.11.1) with 3rd party libraries checked. As both Eigen and Boost are included, which are also dependencies of limbo.
+**PCL 1.11.1**   
+[PCL](https://github.com/PointCloudLibrary/pcl) is c++ library for point cloud processing. We suggest to install [PCL-1.11.1-AllInOne-msvc2019-win64.exe](https://github.com/PointCloudLibrary/pcl/releases/tag/pcl-1.11.1) with 3rd party libraries checked. As both Eigen and Boost are included, which are also dependencies of limbo. There are abundant instructions to get PCL ready.
 
-build 
-ok for linux
+
 You are welcome to convert it to Linux, but I have not. Note that you may need to switch system api in sys.hpp of limbo if you do so.
 
 
@@ -44,6 +46,11 @@ std::string path = "./data/David";
   
 `RobotPoses.dat` gives the robot poses in 6 dimensions. First 3 elements in each row are Euler angles for orientation and second 3 elements are positions. 
 The current version is rather static, some simple modifications are needed to test with number of viewpoints other than 9. We will make the solution more dynamic in the later commit.
+```C++
+std::string path = "./data/David";
+```
+
+
 
 ## Output
 Calibrated hand-eye relation and multi-view point clouds registration.
