@@ -75,7 +75,7 @@ Eigen::Vector3d offset(-0.6, -0.2, 0.2)*/;
 double trimRatio = 0.9;
 double convThresh = 0.0001;
 
-//eye in hand or eye to hand. True for eye in hand, false for eye to hand
+//Flag for eye in hand or eye to hand. True for eye in hand, false for eye to hand
 bool eyeinhand = true;
 
 
@@ -148,7 +148,7 @@ struct Eval {
 
 	// number of input dimension (x.size())
 	BO_PARAM(size_t, dim_in, 6);
-	// number of dimensions of the result (res.size())
+	// number of dimensions of the result 
 	BO_PARAM(size_t, dim_out, 1);
 
 
@@ -739,6 +739,10 @@ int main() {
 	HE.block(0, 0, 3, 3) = Sophus::SO3d::exp(Rotbest).matrix();
 	HE.block(0, 3, 3, 1) = tbest;
 
+	//cout << "****** initial guess of HE is ******" << endl;
+    //cout << HE << endl;     //HEbest
+    //cout << endl;
+    //cout << endl;
 
 
 	//Some AA-ICPv parameter initialization
@@ -1507,6 +1511,46 @@ int main() {
 			// Anderson Acceleration
 			else {
 
+				//visualize the registration during the iteration
+				//cout << "****** Current hand-eye relation is ******" << endl;
+				//cout << HE << endl;    
+				//cout << endl;
+				//cout << endl;
+
+				//pcl::transformPointCloud(*PTRcloud1, *PTRcloud1T, (T_A1.matrix()* HE).cast<float>());
+				//pcl::transformPointCloud(*PTRcloud2, *PTRcloud2T, (T_A2.matrix()* HE).cast<float>());
+				//pcl::transformPointCloud(*PTRcloud3, *PTRcloud3T, (T_A3.matrix()* HE).cast<float>());
+				//pcl::transformPointCloud(*PTRcloud4, *PTRcloud4T, (T_A4.matrix()* HE).cast<float>());
+				//pcl::transformPointCloud(*PTRcloud5, *PTRcloud5T, (T_A5.matrix()* HE).cast<float>());
+				//pcl::transformPointCloud(*PTRcloud6, *PTRcloud6T, (T_A6.matrix()* HE).cast<float>());
+				//pcl::transformPointCloud(*PTRcloud7, *PTRcloud7T, (T_A7.matrix()* HE).cast<float>());
+				//pcl::transformPointCloud(*PTRcloud8, *PTRcloud8T, (T_A8.matrix()* HE).cast<float>());
+				//pcl::transformPointCloud(*PTRcloud9, *PTRcloud9T, (T_A9.matrix()* HE).cast<float>());
+
+				//boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer(new pcl::visualization::PCLVisualizer("Visualizer_Viewer"));
+				//viewer->addPointCloud<pcl::PointXYZ>(PTRcloud1T, "cloud1");
+				//viewer->addPointCloud<pcl::PointXYZ>(PTRcloud2T, "cloud2");
+				//viewer->addPointCloud<pcl::PointXYZ>(PTRcloud3T, "cloud3");
+				//viewer->addPointCloud<pcl::PointXYZ>(PTRcloud4T, "cloud4");
+				//viewer->addPointCloud<pcl::PointXYZ>(PTRcloud5T, "cloud5");
+				//viewer->addPointCloud<pcl::PointXYZ>(PTRcloud6T, "cloud6");
+				//viewer->addPointCloud<pcl::PointXYZ>(PTRcloud7T, "cloud7");
+				//viewer->addPointCloud<pcl::PointXYZ>(PTRcloud8T, "cloud8");
+				//viewer->addPointCloud<pcl::PointXYZ>(PTRcloud9T, "cloud9");
+				//
+				//if (eyeinhand) {
+				//	viewer->setCameraPosition(0.1, -0.28, 0.28, 0.2, -1, -0.15, 0, 0, 1);
+				//}
+				//else {
+				//	viewer->setCameraPosition(0.25, -0.25, 0.4, -0.5, 0.5, -0.6, 0, 0, 1);  
+				//}																  
+
+				//while (!viewer->wasStopped())
+				//{
+				//	viewer->spinOnce(100);
+				//}
+
+
 				//Solve least square problem in (1)
 				Sophus::Vector6d delta;
 				GNcalculation(p, q, idx, R, t, CorresNum, HER, HEt, delta);
@@ -1567,8 +1611,10 @@ int main() {
 
 
 	std::cout << "*********" << endl;
+	std::cout << "*********" << endl;
 	std::cout << "Hand-eye relation is" << endl;
 	std::cout << HE << endl;
+	std::cout << "*********" << endl;
 	std::cout << "*********" << endl;
 
 
@@ -1594,7 +1640,7 @@ int main() {
 	viewer->addPointCloud<pcl::PointXYZ>(PTRcloud7T, "cloud7");
 	viewer->addPointCloud<pcl::PointXYZ>(PTRcloud8T, "cloud8");
 	viewer->addPointCloud<pcl::PointXYZ>(PTRcloud9T, "cloud9");
-	viewer->addText("Press r to centre and zoom the viewer", 20, 380, 18, 100, 100, 100, "text");
+	viewer->addText("Press R to centre and zoom the viewer", 20, 380, 18, 100, 100, 100, "text");
 
 	if (eyeinhand) {
 		viewer->setCameraPosition(0.05, -0.3, 0.28, 0.2, -1, -0.1, 0, 0, 1);
