@@ -21,7 +21,7 @@ As a general solution, RegHEC is applicable for most 3-D vision guided task in b
 <!--For more information, please refer to our paper.-->
 
 ## Building
-I work under Windows operation system with VS2019. This repository is a C++ solution developed with the following versions of external libraries:
+I work on Windows operation system with VS2019. This repository is a C++ solution developed with the following versions of external libraries:
 
 **Limbo 2.1**    
 [Limbo](https://github.com/resibots/limbo) is an open source C++ library for Bayesian optimization, which relies on [NLOpt](https://github.com/stevengj/nlopt) for maximization of acquisition function. Both limbo 2.1 and precompiled NLopt 2.5.0 with MSVC 2019 are given above for your convenience. Please note that, limbo is currently mostly developed for GNU/Linux, thus we modified the system call in the sys.hpp(in limbo-release-2.1/src/limbo/tools) to make it compatible with Windows. 
