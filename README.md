@@ -25,7 +25,7 @@ I work on Windows operation system with VS2019. This repository is a C++ solutio
 
 **Limbo 2.1**    
 [Limbo](https://github.com/resibots/limbo) is an open source C++ library for Bayesian optimization, which relies on [NLOpt](https://github.com/stevengj/nlopt) for maximization of acquisition function. Both limbo 2.1 and precompiled NLopt 2.5.0 with MSVC 2019 are given above for your convenience. Please note that, limbo is currently mostly developed for GNU/Linux, thus we modified the system call in the sys.hpp(in limbo-release-2.1/src/limbo/tools) to make it compatible with Windows. 
-Besides, the `ExpSE3.cpp` is already copied to limbo-release-2.1/src/limbo/kernel, so basically limbo-release-2.1 got all you need to build under windows.
+Besides, the `ExpSE3.cpp` is already copied to limbo-release-2.1/src/limbo/kernel, so basically `limbo-release-2.1` above is all you need to build under windows.
   
 **Sophus 1.0.0**   
 [Sophus](https://github.com/strasdat/Sophus) is a c++ implementation of Lie groups commonly used for 2d and 3d geometric problems (i.e. for Computer Vision or Robotics applications). Sophus 1.0.0 is given above for your convenience. 
