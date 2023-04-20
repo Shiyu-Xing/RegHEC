@@ -41,7 +41,7 @@ You are welcome to convert it to Linux, but I have not. Note that you need to sw
 ## Input
 Multi-view point clouds in `.pcd` and corresponding robot poses in `RobotPoses.dat`(pose of flange frame w.r.t robot base frame) where point clouds are captured. 
 
-Data used in the paper is given in Data folder. In our experiments, point clouds were captured from 9 different viewpoints. Change the input directory `
+Data used in the paper is given in Data folder. In our experiments, point clouds were captured from maximum 9 different viewpoints. Change the input directory `
 std::string path = "./data/David";` to try different object. You can also try with your own data.  
   
 `RobotPoses.dat` gives the robot poses in 6 dimensions. First 3 elements in each row are Euler angles for orientation and second 3 elements are positions. 
