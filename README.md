@@ -56,12 +56,12 @@ Calibrated hand-eye relation and multi-view point clouds registration.
 <img src="docs/FineReg.png" alt="alt text" width=56% height=56%>
 </p>
 <p align="center">
-Registration of 9 David point clouds and calibration results given by RegHEC(eye in hand)
+Registration of 9 David point clouds under robot base frame and calibration results given by RegHEC(eye in hand)
 </p>
 
 <p align="center">
 <img src="docs/Eye2HandFineReg.png" alt="alt text" width=56% height=56%>
 </p>
 <p align="center">
-Registration of 9 Gripper point clouds and calibration results given by RegHEC(eye to hand)
+Registration of 9 Gripper point clouds under robot flange frame and calibration results given by RegHEC(eye to hand)
 </p>
