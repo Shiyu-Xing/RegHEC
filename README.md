@@ -18,7 +18,20 @@ where registration problem is modeled as a Gaussian Process over hand-eye relati
 
 As a general solution, RegHEC is applicable for most 3-D vision guided task in both eye-in-hand and eye-to-hand scenario with no need for specialized calibration rig(e.g. calibration board) but arbitrary available object. *This technique is verified feasible and effective with real robotic hand-eye system and varieties of arbitrary objects including cylinder, cone, sphere and simple plane, which can be quite challenging for correct point cloud registration and sensor motion estimation using existing method.*    
 
-<!--For more information, please refer to our paper.-->
+For more information, please refer to:
+- S. Xing, F. Jing, and M. Tan.  RegHEC: Hand-Eye Calibration via Simultaneous Multi-view Point Clouds Registration of Arbitrary Object. arXiv preprint [arXiv:2304.14092](https://arxiv.org/abs/2304.14092).
+
+If you find our code helpful or use it in your project, please consider citing:
+```bibtex
+@misc{Xing2023-RegHEC,
+      title={RegHEC: Hand-Eye Calibration via Simultaneous Multi-view Point Clouds Registration of Arbitrary Object}, 
+      author={Shiyu Xing and Fengshui Jing and Min Tan},
+      year={2023},
+      eprint={2304.14092},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
 
 ## Building
 I work on Windows operation system with VS2019. This repository is a C++ solution developed with the following versions of external libraries:
