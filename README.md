@@ -33,7 +33,7 @@ If you find our code helpful or use it in your project, please consider citing:
 }
 ```
 
-## Building
+## Building(Windows)
 I work on Windows operation system with VS2019. This repository is a C++ solution developed with the following versions of external libraries:
 
 **Limbo 2.1**    
@@ -50,6 +50,8 @@ Clone or download this repo, open VS2019, then create a new console application.
 
 You are welcome to convert it to Linux, but I have not. Note that you need to switch system api in sys.hpp of limbo, use building tool and dependencies compatible with Linux if you do so. 
 
+## Building(Linux)
+We thank payam-nourizadeh for making our code Linux-friendly and easier to build. See https://github.com/payam-nourizadeh/eye_hand_calib_pointcloud(https://github.com/payam-nourizadeh/eye_hand_calib_pointcloud)
 
 ## Input
 Multi-view point clouds in `.pcd` and corresponding robot poses in `RobotPoses.dat`(pose of flange frame w.r.t robot base frame) where point clouds are captured. 
